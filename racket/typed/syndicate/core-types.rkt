@@ -1559,9 +1559,8 @@
    #:cut
    [⊢ e ≫ e- (⇐ : τ.norm) (⇒ ν-ep (~effs τ-ep ...)) (⇒ ν-f (~effs τ-f ...)) (⇒ ν-s (~effs τ-s ...))]
    #:with x- (generate-temporary #'x)
-   #:with x+ (syntax-local-identifier-as-binding #'x)
    --------
-   [⊢ (erased (define/intermediate x+ x- τ.norm e-))
+   [⊢ (erased (define/intermediate x x- τ.norm e-))
       (⇒ : ★/t)
       (⇒ ν-ep (τ-ep ...))
       (⇒ ν-f (τ-f ...))
@@ -1571,9 +1570,8 @@
    ;This won't work with mutually recursive definitions
    [⊢ e ≫ e- (⇒ : τ) (⇒ ν-ep (~effs τ-ep ...)) (⇒ ν-f (~effs τ-f ...)) (⇒ ν-s (~effs τ-s ...))]
    #:with x- (generate-temporary #'x)
-   #:with x+ (syntax-local-identifier-as-binding #'x)
    --------
-   [⊢ (erased (define/intermediate x+ x- τ e-))
+   [⊢ (erased (define/intermediate x x- τ e-))
       (⇒ : ★/t)
       (⇒ ν-ep (τ-ep ...))
       (⇒ ν-f (τ-f ...))
